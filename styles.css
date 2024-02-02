@@ -1,0 +1,227 @@
+/* Change font to Montserrat */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+ 
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-user-name {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .profile-edit-btn,
+    .profile-settings-btn {
+        font-size: 14px;
+        padding: 6px 14px;
+        margin-bottom: 5px;
+        background-color: #405DE6; /* Instagram blue */
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s;
+    }
+    .profile-edit-btn:hover,
+    .profile-settings-btn:hover {
+        background-color: #5773FF; /* Lighter blue */
+    }
+    .profile-stats li {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .profile-bio p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .profile-user-settings {
+        margin-bottom: 10px;
+    }
+    .profile-edit-btn,
+    .profile-settings-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .profile-stats ul {
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .profile-stats li {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+} 
+ 
+/* Profile and Bio styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply Montserrat font to the whole page */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.profile-image img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.profile-user-name {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.profile-edit-btn,
+.profile-settings-btn {
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(to right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80); /* Instagram gradient */
+    border: none;
+    color: #fff;
+}
+
+.profile-edit-btn:hover,
+.profile-settings-btn:hover {
+    background: linear-gradient(to right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80); /* Instagram gradient */
+    color: #fff;
+    filter: brightness(1.2); /* Brighten on hover */
+}
+
+.profile-stats ul {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.profile-stats li {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.profile-stat-count {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.profile-bio p {
+    font-size: 16px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item-info {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-item-info {
+    opacity: 1;
+}
+
+.gallery-item-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-item-info li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.gallery-item-info li:last-child {
+    margin-right: 0;
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Lighter background */
+    color: #000;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
